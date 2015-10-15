@@ -7,4 +7,4 @@ server:
     links:
         - mongo
 mongo:
-    image: tatum/mongodb
+    image: mongo 

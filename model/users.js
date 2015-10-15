@@ -12,6 +12,7 @@ db.on('error', console.error);
 var userSchema = new mongoose.Schema({
     tlf: {type: String, require: true, unique: true},
     email: {type: String, unique: true, require: true},
+    pass: {type: String, require: true},
     nombre: {type: String, require: true},
     apellido: {type: String, require: true},
     info: {type: String, require: true},

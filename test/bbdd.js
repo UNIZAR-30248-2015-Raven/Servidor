@@ -12,6 +12,7 @@ describe('Base de datos', function(){
             var user = {
                 tlf: "000000000",
                 email: "test@test.com",
+                pass: "asdfadfadsfa",
                 nombre: "Doctor",
                 apellido: "Who",
                 timeStamp: Date.now(),
@@ -24,6 +25,7 @@ describe('Base de datos', function(){
                     tlf: "111111111"
                 }
             };
+            users.removeTlf("000000000", function(err){});
             users.add(user, function(err){
                 expect(err).to.equal(null);
                 done();

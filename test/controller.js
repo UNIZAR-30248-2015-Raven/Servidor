@@ -16,6 +16,7 @@ describe('Controller', function(){
         var user = {
             tlf: "000000000",
             email: "test@test.com",
+            pass: "asjdflakjfla",
             nombre: "Doctor",
             apellido: "Who",
             info: "The Doctor is a Time Lord from the planet of"
@@ -31,6 +32,7 @@ describe('Controller', function(){
             .post('/createUser')
             .send(user)
             .expect(200, done);
+        users.removeTlf("000000000", function(err){});
     });
 });
 
