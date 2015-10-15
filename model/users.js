@@ -22,7 +22,7 @@ var userSchema = new mongoose.Schema({
 });
 var users = mongoose.model('users', userSchema);
 
-mongoose.connect('mongodb://' + conf.ddbb.url + '/raven');
+mongoose.connect('mongodb://' + conf.ddbb.url + ':' + conf.ddbb.port + '/raven');
 //Funciones de la BBDD
 module.exports = {
     //Callback es una funcion que realiza acciones dependiendo del fallo o no de

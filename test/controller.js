@@ -32,7 +32,6 @@ describe('Controller', function(){
             .post('/createUser')
             .send(user)
             .expect(200, done);
-        users.removeTlf("000000000", function(err){});
     });
 });
 
