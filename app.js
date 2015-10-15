@@ -1,11 +1,9 @@
 //app.js
 
 //Modulos a cargar en el servidor
-var express = require('express');
-var bodyParser = require('body-parser');
-
-//Fichero de configuracion en json
-var config = require('./config/conf');
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    config = require('./config/conf');
 
 //Iniciamos la aplicacion de express
 var app = express();

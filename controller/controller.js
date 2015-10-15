@@ -12,6 +12,7 @@ module.exports = function(app){
     //Funcion para la creacion del usuario
     app.post('/createUser', function(req,res){
        var json = req.body;
+       json.timeStamp = Date.now();
 
        if(utils.haveUndefinedJSON(json)){
            res.sendStatus(406);
@@ -19,9 +20,7 @@ module.exports = function(app){
            //ADD BBD
            users.add(json, function(err){
                if (err == null) res.sendStatus(200);
-               else{
-                   res.sendStatus(400);
-               }
+               else res.sendStatus(400);
            });
        }
     });

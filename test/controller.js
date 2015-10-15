@@ -18,9 +18,9 @@ describe('Controller', function(){
             email: "test@test.com",
             nombre: "Doctor",
             apellido: "Who",
-            timeStamp: Date.now(),
             info: "The Doctor is a Time Lord from the planet of"
                 + "Gallifrey who travels through time and space",
+            nacimiento: Date.now(),
             contacto: {
                 nombre: "River",
                 apellidos: "Song",

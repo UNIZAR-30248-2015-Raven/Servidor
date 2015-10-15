@@ -16,6 +16,7 @@ var userSchema = new mongoose.Schema({
     apellido: {type: String, require: true},
     info: {type: String, require: true},
     timeStamp: {type: Date, require: true},
+    nacimiento: {type: Date},
     contacto: [{nombre: String, apellidos: String, tlf: String}],
 });
 var users = mongoose.model('users', userSchema);
