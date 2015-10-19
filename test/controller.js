@@ -13,6 +13,8 @@ describe('Controller', function(){
     });
     //Comprobamos que funciona la llamada a crear usuario
     it('llamada para crear usuario', function(done){
+        //Aumento del timeout por internet
+        this.timeout(30000);
         var user = {
             tlf: "000000000",
             email: "test@test.com",

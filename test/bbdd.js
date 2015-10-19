@@ -9,6 +9,9 @@ describe('Base de datos', function(){
     describe('#Usuarios', function(){
         //Creacion de un nuevo usuario
         it('Debe crear un nuevo usuario', function(done){
+            //Aumento el time-out
+            users.removeTlf("000000000", function(){});
+            this.timeout(30000);
             var user = {
                 tlf: "000000000",
                 email: "test@test.com",
@@ -30,9 +33,9 @@ describe('Base de datos', function(){
                 expect(err).to.equal(null);
                 done();
             });
-            done();
         });
         it('Borra un usuario por tlf', function(done){
+            this.timeout(30000);
             return users.removeTlf("000000000", function(err){
                 expect(err).to.equal(null)
                 done();
