@@ -26,14 +26,14 @@ describe('Base de datos', function(){
                     tlf: "111111111"
                 }
             };
-            users.removeTlf("000000000", function(err){});
-            users.add(user, function(err){
+            return users.add(user, function(err){
                 expect(err).to.equal(null);
                 done();
             });
+            done();
         });
         it('Borra un usuario por tlf', function(done){
-            users.removeTlf("000000000", function(err){
+            return users.removeTlf("000000000", function(err){
                 expect(err).to.equal(null)
                 done();
             });

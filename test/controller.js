@@ -29,7 +29,7 @@ describe('Controller', function(){
                 tlf: "111111111"
             }
         };
-        request(app)
+        return request(app)
             .post('/createUser')
             .send(user)
             .expect(200, done);

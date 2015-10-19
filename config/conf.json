@@ -1,7 +1,7 @@
 {
     "port": "8080",
     "ddbb": {
-        "url": "mongo",
-        "port": "27017"
+        "url": "raven:raven@ds041144.mongolab.com",
+        "port": "41144"
     }
 }
