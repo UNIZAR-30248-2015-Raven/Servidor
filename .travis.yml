@@ -2,11 +2,3 @@ language: node_js
 node_js:
   - "4.1"
   - "4.0"
-  - "moongose"
-  - "express"
-  - "body-parser"
-  - "supertest"
-  - "mocha"
-  - "should"
-  - "chai"
-  - "expect.js"
