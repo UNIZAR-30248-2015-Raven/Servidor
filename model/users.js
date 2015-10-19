@@ -16,6 +16,7 @@ var userSchema = new mongoose.Schema({
     nombre: {type: String, require: true},
     apellido: {type: String, require: true},
     info: {type: String, require: true},
+    residencia: {type: String},
     timeStamp: {type: Date, require: true},
     nacimiento: {type: Date},
     contacto: [{nombre: String, apellidos: String, tlf: String}],

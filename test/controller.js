@@ -21,6 +21,7 @@ describe('Controller', function(){
             apellido: "Who",
             info: "The Doctor is a Time Lord from the planet of"
                 + "Gallifrey who travels through time and space",
+            residencia: "Gallifrey",
             nacimiento: Date.now(),
             contacto: {
                 nombre: "River",
