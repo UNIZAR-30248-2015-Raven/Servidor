@@ -8,7 +8,7 @@ describe('Controller', function(){
     //Comprobamos que el test esta corriendo
     it('existe el servidor', function(done){
         request(app)
-            .get('/up')
+            .get('/')
             .expect(200, done);
     });
     //Comprobamos que funciona la llamada a crear usuario

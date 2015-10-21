@@ -5,7 +5,7 @@ var utils = require('../utils/utils.js'),
 //Exportamos las funcioens
 module.exports = function(app){
     //Funcion que comprueba que el servidor esta vivo, para probar los test
-    app.get('/up', function(req, res){
+    app.get('/', function(req, res){
         res.sendStatus(200);
     });
 
