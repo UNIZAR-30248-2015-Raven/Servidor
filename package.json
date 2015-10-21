@@ -19,7 +19,8 @@
     "scripts": {
         "start": "node_modules/.bin/supervisor app",
         "test": "node_modules/.bin/mocha",
-        "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml"
+        "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml",
+        "start": "node app.js"
     },
     "engines":{
         "node": "4.1.1"
