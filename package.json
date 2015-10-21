@@ -20,5 +20,8 @@
         "start": "node_modules/.bin/supervisor app",
         "test": "node_modules/.bin/mocha",
         "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml"
+    },
+    "engines":{
+        "node": "4.1.1"
     }
 }
