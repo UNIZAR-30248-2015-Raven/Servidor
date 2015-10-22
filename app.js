@@ -8,6 +8,14 @@ var express = require('express'),
 //Iniciamos la aplicacion de express
 var app = express();
 
+//Para desplegar en openshift
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || conf.port
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || conf.url
+//var server_port = conf.port
+//var server_ip_address = conf.url
+
+
+
 //Configuramos express
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -16,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./controller/controller')(app);
 
 //Iniciamos el servidor
-app.listen(config.port, function(){
+app.listen(server_port, server_ip_address, function(){
 //    console.log("Magic happens on port: " + config.port);
 });
 
