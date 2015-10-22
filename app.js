@@ -9,8 +9,8 @@ var express = require('express'),
 var app = express();
 
 //Para desplegar en openshift
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || conf.port
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || conf.url
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || config.port
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || config.url
 //var server_port = conf.port
 //var server_ip_address = conf.url
 
