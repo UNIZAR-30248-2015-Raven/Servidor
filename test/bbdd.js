@@ -23,11 +23,9 @@ describe('Base de datos', function(){
                 info: "The Doctor is a Time Lord from the planet of"
                     + "Gallifrey who travels through time and space",
                 residencia: "Gallifrey",
-                contacto: {
-                    nombre: "River",
-                    apellidos: "Song",
-                    tlf: "111111111"
-                }
+                contactoNombre: "River",
+                contactoApellido: "Song",
+                contactoTelefono: "111111111"
             };
             return users.add(user, function(err){
                 expect(err).to.equal(null);

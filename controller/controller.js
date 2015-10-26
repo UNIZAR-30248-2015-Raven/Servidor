@@ -14,14 +14,9 @@ module.exports = function(app){
        var json = req.body;
        json.timeStamp = Date.now();
 
-       if(utils.haveUndefinedJSON(json)){
-           res.sendStatus(406);
-       } else{
-           //ADD BBD
-           users.add(json, function(err){
-               if (err == null) res.sendStatus(200);
-               else res.sendStatus(400);
-           });
-       }
+       users.add(json, function(err){
+            if (err == null) res.sendStatus(200);
+            else res.sendStatus(400);
+       });
     });
 }

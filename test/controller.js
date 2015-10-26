@@ -25,11 +25,9 @@ describe('Controller', function(){
                 + "Gallifrey who travels through time and space",
             residencia: "Gallifrey",
             nacimiento: Date.now(),
-            contacto: {
-                nombre: "River",
-                apellidos: "Song",
-                tlf: "111111111"
-            }
+            contactoNombre: "River",
+            contactoApellido: "Song",
+            contactoTelefono: "111111111"
         };
         return request(app)
             .post('/createUser')

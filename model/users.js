@@ -19,7 +19,9 @@ var userSchema = new mongoose.Schema({
     residencia: {type: String},
     timeStamp: {type: Date, require: true},
     nacimiento: {type: Date},
-    contacto: [{nombre: String, apellidos: String, tlf: String}],
+    contactoNombre: String, 
+    contactoApellido: String, 
+    contactoTelefono: String
 });
 var users = mongoose.model('users', userSchema);
 
