@@ -11,7 +11,7 @@ db.on('error', console.error);
 //Modelo de la base de datos
 var userSchema = new mongoose.Schema({
     tlf: {type: String, require: true, unique: true},
-    email: {type: String, unique: true, require: true},
+    email: {type: String, require: true, unique: true},
     pass: {type: String, require: true},
     nombre: {type: String, require: true},
     apellido: {type: String, require: true},
@@ -19,9 +19,9 @@ var userSchema = new mongoose.Schema({
     residencia: {type: String},
     timeStamp: {type: Date, require: true},
     nacimiento: {type: Date},
-    contactoNombre: String, 
-    contactoApellido: String, 
-    contactoTelefono: String
+    contactoNombre: {type: String}, 
+    contactoApellido: {type: String}, 
+    contactoTelefono: {type: String}
 });
 var users = mongoose.model('users', userSchema);
 
