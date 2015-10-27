@@ -19,8 +19,8 @@ var userSchema = new mongoose.Schema({
     residencia: {type: String},
     timeStamp: {type: Date, require: true},
     nacimiento: {type: Date},
-    contactoNombre: {type: String}, 
-    contactoApellido: {type: String}, 
+    contactoNombre: {type: String},
+    contactoApellido: {type: String},
     contactoTelefono: {type: String}
 });
 var users = mongoose.model('users', userSchema);
@@ -42,5 +42,14 @@ module.exports = {
         users.remove({tlf: tlf_}, function(err){
             callback(err);
         });
+    },
+    //Comprobar que hacemos el login correctamente sobre un usuario que exista
+    //previamente
+    login: function(datosLogin_, callback) {
+      // funcion de busqueda que el usuario y la contraseña coincidan
+      // devolveremos el error , y los datos del usuario
+      users.findOne({"email": datosLogin_.email , "pass":datosLogin_.pass}, function(err, user){
+        callback(err,  user);
+      });
     }
 };
