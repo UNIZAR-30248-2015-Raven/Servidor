@@ -12,7 +12,7 @@ describe('Controller', function(){
             .expect(200, done);
     });
     //Comprobamos que funciona la llamada a crear usuario
-    it('llamada para crear usuario', function(done){
+    it('Llamada para crear usuario', function(done){
         //Aumento del timeout por internet
         this.timeout(30000);
         var user = {
@@ -37,15 +37,15 @@ describe('Controller', function(){
     it('llamada para logear al usuario', function(done) {
       this.timeout(30000);
       return request(app)
-        .post('/login')
-        .send({email: "test@test.com" , pass: "asjdflakjfla"})
-        .expect(200, done);
+      .post('/loginUser')
+      .send({"email":"test@test.com" ,"pass":"asjdflakjfla"})
+      .expect(200, done);
     })
 
     it('llamada para logear al usuario con contraseña mal', function(done) {
       this.timeout(30000);
       return request(app)
-        .post('/login')
+        .post('/loginUser')
         .send({"email":"test@test.com" ,"pass":"RubenTosesy"})
         .expect(400, done);
     })
