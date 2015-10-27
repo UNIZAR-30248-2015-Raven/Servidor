@@ -14,3 +14,4 @@ echo "------------------------------------------"
 aux=$URL"login"
 echo "POST $aux"
 curl -X POST $aux -d "email":"test","pass":"as"
+
