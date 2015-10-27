@@ -38,7 +38,7 @@ describe('Controller', function(){
       this.timeout(30000);
       return request(app)
         .post('/login')
-        .send({"email":"test@test.com" ,"pass":"asjdflakjfla"})
+        .send({email: "test@test.com" , pass: "asjdflakjfla"})
         .expect(200, done);
     })
 
