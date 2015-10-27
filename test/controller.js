@@ -37,9 +37,9 @@ describe('Controller', function(){
     it('llamada para logear al usuario', function(done) {
       this.timeout(30000);
       return request(app)
-        .post('/loginUser')
-        .send({"email":"test@test.com" ,"pass":"asjdflakjfla"})
-        .expect(200, done);
+      .post('/loginUser')
+      .send({"email":"test@test.com" ,"pass":"asjdflakjfla"})
+      .expect(200, done);
     })
 
     it('llamada para logear al usuario con contraseña mal', function(done) {
