@@ -12,7 +12,7 @@ describe('Controller', function(){
             .expect(200, done);
     });
     //Comprobamos que funciona la llamada a crear usuario
-    it('llamada para crear usuario', function(done){
+    it('Llamada para crear usuario', function(done){
         //Aumento del timeout por internet
         this.timeout(30000);
         var user = {
