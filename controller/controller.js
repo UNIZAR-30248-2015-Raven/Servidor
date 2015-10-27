@@ -21,7 +21,7 @@ module.exports = function(app){
     });
 
     // Funcion para loguear al usuario en el sistema
-    app.post('/login', function(req, res){
+    app.post('/loginUser', function(req, res){
       var json = req.body;
       //Comprobamos si recibimos err si es asi enviamos status 400
       //  si no hay error comprobamos si el usuario es null o no
