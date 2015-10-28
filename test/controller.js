@@ -49,4 +49,18 @@ describe('Controller', function(){
         .send({"email":"test@test.com" ,"pass":"RubenTosesy"})
         .expect(400, done);
     })
+    it('busca a un usuario bien', function(done){
+        this.timeout(30000);
+        return request(app)
+            .post('/findUser')
+            .send({"email":"test@test.com"})
+            .expect(200, done);
+    });
+    it('busca mal un usuairo', function(done){
+        this.timeout(30000);
+        return request(app)
+            .post('/findUser')
+            .send({"email":"RubenToViejo@asilo.com"})
+            .expect(400, done);
+    });
 });

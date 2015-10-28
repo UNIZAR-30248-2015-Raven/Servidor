@@ -51,5 +51,11 @@ module.exports = {
       users.findOne({"email": datosLogin_.email , "pass":datosLogin_.pass}, function(err, user){
         callback(err,  user);
       });
+    },
+    //Devuelve la informacion del usuario
+    find: function(email_, callback){
+        users.findOne({"email":email_}, function(err, user){
+            callback(err, user);
+        });
     }
 };

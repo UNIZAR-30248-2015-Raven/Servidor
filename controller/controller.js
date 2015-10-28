@@ -40,4 +40,15 @@ module.exports = function(app){
           });
       }
     });
+
+    app.post('/findUser', function(req, res){
+        var json = req.body;
+        if(json.email == undefined) res.sendStatus(400);
+        users.find(json.email, function(err, user){
+            if(err == null){
+                if(user == null) res.sendStatus(400);
+                else res.send(user);
+            }else res.sendStatus(400);
+        });
+    });
 }

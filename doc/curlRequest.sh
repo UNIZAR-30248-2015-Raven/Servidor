@@ -1,6 +1,6 @@
 #!/bin/bash
-#URL="http://raven-sirbargus.rhcloud.com/"
-URL="localhost:8080/"
+URL="http://raven-sirbargus.rhcloud.com/"
+#URL="localhost:8080/"
 
 echo "GET $URL"
 curl -I $URL
@@ -13,8 +13,14 @@ echo ""
 echo "------------------------------------------"
 aux=$URL"loginUser"
 echo "POST $aux"
-curl -H "Content-Type: application/json" -X POST -d '{"email":"test","pass":"as"}' $aux
+curl -H "Content-Type: application/json" -X POST -d '{"email":"test@test.com","pass":"asjdflakjfla"}' $aux
 echo ""
 echo "------------------------------------------"
 aux=$URL"loginUser"
 curl -H "Content-Type: application/json" -X POST -d '{"email":"test","pass":"SADFADF"}' $aux
+echo ""
+echo "------------------------------------------"
+aux=$URL"findUser"
+echo "POST $aux"
+curl -H "Content-Type: application/json" -X POST -d '{"email":"test"}' $aux
+
