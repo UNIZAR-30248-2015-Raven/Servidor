@@ -63,4 +63,11 @@ describe('Controller', function(){
             .send({"email":"RubenToViejo@asilo.com"})
             .expect(400, done);
     });
+    it('llamada para logear sin parámetros', function(done) {
+      this.timeout(30000);
+      return request(app)
+        .post('/loginUser')
+        .send({})
+        .expect(400, done);
+    })
 });
