@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
     info: {type: String, require: true},
     residencia: {type: String},
     timeStamp: {type: Date, require: true},
-    nacimiento: {type: Date},
+    nacimiento: {type: String},
     contactoNombre: {type: String},
     contactoApellido: {type: String},
     contactoTelefono: {type: String}

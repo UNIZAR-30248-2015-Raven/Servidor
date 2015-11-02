@@ -19,7 +19,7 @@ describe('Base de datos', function(){
                 nombre: "Doctor",
                 apellido: "Who",
                 timeStamp: now,
-                nacimiento: now,
+                nacimiento: "1994",
                 info: "The Doctor is a Time Lord from the planet of"
                     + "Gallifrey who travels through time and space",
                 residencia: "Gallifrey",

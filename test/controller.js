@@ -24,7 +24,7 @@ describe('Controller', function(){
             info: "The Doctor is a Time Lord from the planet of"
                 + "Gallifrey who travels through time and space",
             residencia: "Gallifrey",
-            nacimiento: Date.now(),
+            nacimiento: "1994",
             contactoNombre: "River",
             contactoApellido: "Song",
             contactoTelefono: "111111111"

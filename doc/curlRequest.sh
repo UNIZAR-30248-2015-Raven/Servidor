@@ -13,7 +13,7 @@ echo ""
 echo "------------------------------------------"
 aux=$URL"loginUser"
 echo "POST $aux"
-curl -H "Content-Type: application/json" -X POST -d '{"email":"test@test.com","pass":"asjdflakjfla"}' $aux
+curl -H "Content-Type: application/json" -X POST -d '{"email":"test","pass":"as"}' $aux
 echo ""
 echo "------------------------------------------"
 aux=$URL"loginUser"
