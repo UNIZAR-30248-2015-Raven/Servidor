@@ -69,5 +69,16 @@ describe('Controller', function(){
         .post('/loginUser')
         .send({})
         .expect(400, done);
+    });
+    it('crear evento', function(done) {
+      this.timeout(30000);
+      return request(app)
+        .post('/createEvent')
+        .send({
+            id_event : "dd", 
+            texto : "texto de prueba",
+            periodicidad : 2,
+            email : "rgcmb@hotmail.com"})
+        .expect(200, done);
     })
 });

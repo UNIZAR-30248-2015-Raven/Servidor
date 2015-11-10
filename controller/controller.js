@@ -1,6 +1,7 @@
 //Controlador de peticiones
 var utils = require('../utils/utils.js'),
     users = require('../model/users.js');
+    events = require('../model/events.js');
 
 //Exportamos las funcioens
 module.exports = function(app){
@@ -50,5 +51,13 @@ module.exports = function(app){
                 else res.send(user);
             }else res.sendStatus(400);
         });
+    });
+
+    app.post('/createEvent', function(req, res){
+      var json = req.body;
+      events.createEvent(json, function(err){
+        if (err == null) res.sendStatus(200);
+        else res.sendStatus(400);
+      })
     });
 }

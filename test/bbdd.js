@@ -3,6 +3,7 @@
 var conf = require('../config/conf'),
     expect = require('chai').expect,
     users = require('../model/users.js');
+    events = require('../model/events.js');
 var now = Date.now();
 //Test del servidor
 describe('Base de datos', function(){
@@ -46,6 +47,12 @@ describe('Base de datos', function(){
                 done();
             });
         });
-
+        it('Borra un evento por id', function(done){
+            this.timeout(30000);
+            return events.deleteEvent("dd", function(err){
+                expect(err).to.equal(null)
+                done();
+            });
+        });
     });
 });
