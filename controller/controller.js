@@ -52,7 +52,12 @@ module.exports = function(app){
             }else res.sendStatus(400);
         });
     });
-
+    // Crea un evento
+    // TO DO comprobar que todos los datos estén rellenados
+    // generación dinámica de id_event o autoincremental
+    // Se utiliza el email como campo que lo relaciona 
+    // con el usuario que crea el evento
+    // Investigar si utilizar email o token de session
     app.post('/createEvent', function(req, res){
       var json = req.body;
       events.createEvent(json, function(err){

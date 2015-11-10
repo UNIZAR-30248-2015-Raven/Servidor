@@ -11,6 +11,7 @@ db.on('error', console.error);
 var eventSchema = new mongoose.Schema({
 	id_event: {type: String, require: true, unique: true},
 	texto: {type: String, require: true},
+	// saber como utilizar el tipo date para día y hora
 	timeStamp: {type: Date, require: true},
 	periodicidad: {type: Number, require: true},
 	email: {type: String, require: true}
