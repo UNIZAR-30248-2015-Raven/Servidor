@@ -28,6 +28,11 @@ module.exports = {
 			callback(err);
 		});
 	},
+	fetchEvents: function(email_, callback){
+        events.find({email: email_}, function(err, eventsList){
+            callback(err,eventsList);
+        });
+    },
 	deleteEvent: function(id_, callback){
         events.remove({id_event: id_}, function(err){
             callback(err);

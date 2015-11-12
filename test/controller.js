@@ -75,10 +75,25 @@ describe('Controller', function(){
       return request(app)
         .post('/createEvent')
         .send({
-            id_event : "dd", 
-            texto : "texto de prueba",
+            id_event : "",
+            texto : "Es mi cumpleaños",
+            timeStamp: "05 12 2015 00:00",
             periodicidad : 2,
             email : "rgcmb@hotmail.com"})
         .expect(200, done);
-    })
+    });
+    it('Listar eventos', function(done){
+        this.timeout(30000);
+        request(app)
+            .get('/getEvents/rgcmb@hotmail.com')
+            //.expect(200, done)
+            .end(function(err, req) {
+                if (req.status == 200){
+                     if (req.body != null) {
+                        done();
+                     }
+                }
+                throw err;
+            });
+    });
 });
