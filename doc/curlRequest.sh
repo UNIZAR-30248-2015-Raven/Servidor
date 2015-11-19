@@ -23,4 +23,9 @@ echo "------------------------------------------"
 aux=$URL"findUser"
 echo "POST $aux"
 curl -H "Content-Type: application/json" -X POST -d '{"email":"test"}' $aux
+echo ""
+echo "------------------------------------------"
+aux=$URL"createEvent"
+echo "POST $aux"
+curl -H "Content-Type: application/json" -X POST -d '{"id_event":"dd","texto":"txt","periodicidad":"2","email":"rgcmb@hotmail.com"}' $aux
 

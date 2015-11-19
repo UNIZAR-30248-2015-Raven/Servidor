@@ -16,10 +16,12 @@
         "istanbul": "~0.4.0",
         "codecov.io": "0.1.6"
     },
+    "bin": {
+        "codecov": "./bin/codecov.io.js"
+    },
     "scripts": {
         "start": "node_modules/.bin/supervisor app",
-        "test": "node_modules/.bin/mocha",
-        "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml",
+        "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js",
         "start": "node app.js"
     },
     "engines":{
