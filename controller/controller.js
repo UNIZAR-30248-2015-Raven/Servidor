@@ -67,11 +67,11 @@ module.exports = function(app){
       // modificar los test para que puedas borrar un id que no sabes
       var id_event_encrypt = crypto.createHash('md5').update(new Date().getTime() + json.email).digest("hex");
       //console.log(id_event_encrypt);
-      if (json.texto == null || json.timeStamp == null || 
+      if (json.texto == null || json.hour == null || 
           json.periodicidad == null || json.email == null) {
         res.sendStatus(400);
       } else {   
-        json.id_event = "dd"; // To do modificar para id encryptada
+        json.id_event = id_event_encrypt; // To do modificar para id encryptada OK
         events.createEvent(json, function(err){
           if (err == null) res.sendStatus(200);
           else res.sendStatus(400);

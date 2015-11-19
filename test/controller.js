@@ -77,8 +77,9 @@ describe('Controller', function(){
         .send({
             id_event : "",
             texto : "Es mi cumpleaños",
-            timeStamp: "05 12 2015 00:00",
-            periodicidad : 2,
+            day: "12 05 2015",
+            hour: "00:00",
+            periodicidad : 0,
             email : "rgcmb@hotmail.com"})
         .expect(200, done);
     });
