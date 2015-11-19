@@ -79,7 +79,7 @@ describe('Controller', function(){
             texto : "Es mi cumpleaños",
             day: "12 05 2015",
             hour: "00:00",
-            periodicidad : 0,
+            periodicidad : "0",
             email : "rgcmb@hotmail.com"})
         .expect(200, done);
     });
@@ -98,7 +98,7 @@ describe('Controller', function(){
             });
     });
     // Tiene que fallar por que no exite un evento con el id y usuario especificados
-    it('Borrar evento', function(done){
+    it('Borrar evento fallido', function(done){
         this.timeout(30000);
         request(app)
             .delete('/deleteEvent')

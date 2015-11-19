@@ -67,6 +67,11 @@ module.exports = function(app){
       // modificar los test para que puedas borrar un id que no sabes
       var id_event_encrypt = crypto.createHash('md5').update(new Date().getTime() + json.email).digest("hex");
       //console.log(id_event_encrypt);
+      /**
+       * Formato del Json
+       * Sin periodicidad {id_event : "", texto : "texto", periodicidad : "0", day : "formato fecha", hour : "f hora", email : "email"}
+       * Con periodicidad {id_event : "", texto : "texto", periodicidad : "L M X J V S D", hour : "f hora", email : "email"} 
+       */
       if (json.texto == null || json.hour == null || 
           json.periodicidad == null || json.email == null) {
         res.sendStatus(400);
@@ -78,7 +83,7 @@ module.exports = function(app){
         })
       }
     });
-
+    // Para listar todos los eventos accederemos a esta direccion y pasaremos nuestro email
     app.get('/getEvents/:email', function(req, res) {
       if (req.params.email != null) {
         events.fetchEvents(req.params.email, function(err, eventsList) {

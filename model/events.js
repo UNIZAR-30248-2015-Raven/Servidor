@@ -14,7 +14,7 @@ var eventSchema = new mongoose.Schema({
 	// saber como utilizar el tipo date para día y hora
 	day: {type: String, require: false},
 	hour: {type: String, require: true},
-	periodicidad: {type: Number, require: true},
+	periodicidad: {type: String, require: true},
 	email: {type: String, require: true}
 });
 
