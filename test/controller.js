@@ -97,4 +97,16 @@ describe('Controller', function(){
                 throw err;
             });
     });
+    // Tiene que fallar por que no exite un evento con el id y usuario especificados
+    it('Borrar evento', function(done){
+        this.timeout(30000);
+        request(app)
+            .delete('/deleteEvent')
+            //.expect(200, done)
+            .send({
+                id_event : "22", 
+                email : "rgcmb@hotmail"
+                })
+            .expect(400, done);
+    });
 });

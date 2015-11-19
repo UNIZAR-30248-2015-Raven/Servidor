@@ -95,4 +95,20 @@ module.exports = function(app){
         })
       }
     })
+
+    app.delete('/deleteEvent', function(req, res) {
+      var json = req.body;
+      //console.log(json.id_event);
+      events.deleteEvent(json.id_event, json.email, function(err, op){
+        if (err != null) {
+          res.sendStatus(400);
+        } else {
+          if (op.n == 1) {
+            res.sendStatus(200);
+          } else {
+            res.sendStatus(400);
+          }
+        }
+      })
+    })
 }

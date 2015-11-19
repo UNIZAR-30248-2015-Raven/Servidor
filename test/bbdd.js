@@ -56,7 +56,7 @@ describe('Base de datos', function(){
             events.fetchEvents("rgcmb@hotmail.com", function(err, evento){
                 id_event = evento[0].id_event;
                 //console.log(id_event);
-                return events.deleteEvent(id_event, function(err){
+                return events.deleteEvent(id_event, "rgcmb@hotmail.com", function(err, op){
                     expect(err).to.equal(null)
                     done();
                 });

@@ -34,9 +34,11 @@ module.exports = {
             callback(err,eventsList);
         });
     },
-	deleteEvent: function(id_, callback){
-        events.remove({id_event: id_}, function(err){
-            callback(err);
+    // borra un evento si pasando la id y si tu email es el del creador del evento
+	deleteEvent: function(id_, email_, callback){
+        events.remove({id_event: id_, email: email_}, function(err, op){
+        	//console.log(op.result);
+            callback(err, op.result);
         });
     },
 }
