@@ -1,6 +1,6 @@
 #Servidor
 
-[![BuildStatus](https://travis-ci.org/UNIZAR-30248-2015-Raven/Servidor.svg?branch=master)](https://travis-ci.org/UNIZAR-30248-2015-Raven/Servidor)
+[![BuildStatus](https://travis-ci.org/UNIZAR-30248-2015-Raven/Servidor.svg?branch=master)](https://travis-ci.org/UNIZAR-30248-2015-Raven/Servidor)[![codecov.io](https://codecov.io/github/UNIZAR-30248-2015-Raven/Servidor/coverage.svg?branch=master)](https://codecov.io/github/UNIZAR-30248-2015-Raven/Servidor?branch=master)
 
 [Servidor](http://raven-sirbargus.rhcloud.com)
 
