@@ -20,9 +20,9 @@ aux=$URL"loginUser"
 curl -H "Content-Type: application/json" -X POST -d '{"email":"test","pass":"SADFADF"}' $aux
 echo ""
 echo "------------------------------------------"
-aux=$URL"findUser"
-echo "POST $aux"
-curl -H "Content-Type: application/json" -X POST -d '{"email":"test"}' $aux
+aux=$URL"findUser/test"
+echo "GET $aux"
+curl $aux
 echo ""
 echo "------------------------------------------"
 aux=$URL"createEvent"

@@ -41,4 +41,9 @@ module.exports = {
             callback(err, op.result);
         });
     },
+	fetchEvent: function(id_, callback){
+		events.find({id_event: id_}, function(err, op){
+			callback(err, op);
+		})
+	}
 }

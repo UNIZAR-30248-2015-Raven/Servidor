@@ -3,6 +3,7 @@ var conf = require('../config/conf'),
     express = require('express'),
     app = require('../app');
 
+var event = {};
 //Test del servidor
 describe('Controller', function(){
     //Comprobamos que el test esta corriendo
@@ -88,11 +89,24 @@ describe('Controller', function(){
             .end(function(err, req) {
                 if (req.status == 200){
                      if (req.body != null) {
+                         event = req.body;
                         done();
                      }
                 }
                 throw err;
             });
+    });
+    it('No devuelve un evento', function(done){
+        this.timeout(30000);
+        request(app)
+            .get('/getEvent/12')
+            .expect(400, done);
+    });
+    it('No devuelve un evento', function(done){
+        this.timeout(30000);
+        request(app)
+            .get('/getEvent/' + event[0].id_event)
+            .expect(200, done);
     });
     // Tiene que fallar por que no exite un evento con el id y usuario especificados
     it('Borrar evento fallido', function(done){

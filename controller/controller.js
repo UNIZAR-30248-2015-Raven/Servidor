@@ -97,8 +97,19 @@ module.exports = function(app){
             }
           }
         })
-      }
-    })
+        }
+    }),
+    app.get('/getEvent/:id', function(req, res) {
+        if (req.params.id != null) {
+            events.fetchEvent(req.params.id, function(err, eventList) {
+            if (err != null) res.sendStatus(400);
+            else {
+                if (eventList == "") res.sendStatus(400);
+                else res.status(200).send(eventList);
+            }
+          })
+        }
+    }),
 
     app.delete('/deleteEvent', function(req, res) {
       var json = req.body;
