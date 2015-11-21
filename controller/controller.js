@@ -43,10 +43,9 @@ module.exports = function(app){
       }
     });
 
-    app.post('/findUser', function(req, res){
+    app.get('/findUser/:email', function(req, res){
         var json = req.body;
-        if(json.email == undefined) res.sendStatus(400);
-        users.find(json.email, function(err, user){
+        users.find(req.params.email, function(err, user){
             if(err == null){
                 if(user == null) res.sendStatus(400);
                 else res.send(user);
@@ -56,7 +55,7 @@ module.exports = function(app){
     // Crea un evento
     // TO DO comprobar que todos los datos estén rellenados
     // generación dinámica de id_event o autoincremental
-    // Se utiliza el email como campo que lo relaciona 
+    // Se utiliza el email como campo que lo relaciona
     // con el usuario que crea el evento
     // Investigar si utilizar email o token de session
     app.post('/createEvent', function(req, res) {
@@ -70,12 +69,12 @@ module.exports = function(app){
       /**
        * Formato del Json
        * Sin periodicidad {id_event : "", texto : "texto", periodicidad : "0", day : "formato fecha", hour : "f hora", email : "email"}
-       * Con periodicidad {id_event : "", texto : "texto", periodicidad : "L M X J V S D", hour : "f hora", email : "email"} 
+       * Con periodicidad {id_event : "", texto : "texto", periodicidad : "L M X J V S D", hour : "f hora", email : "email"}
        */
-      if (json.texto == null || json.hour == null || 
+      if (json.texto == null || json.hour == null ||
           json.periodicidad == null || json.email == null) {
         res.sendStatus(400);
-      } else {   
+      } else {
         json.id_event = id_event_encrypt; // To do modificar para id encryptada OK
         events.createEvent(json, function(err){
           if (err == null) res.sendStatus(200);

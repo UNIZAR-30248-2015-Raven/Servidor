@@ -52,23 +52,20 @@ describe('Controller', function(){
     it('busca a un usuario bien', function(done){
         this.timeout(30000);
         return request(app)
-            .post('/findUser')
-            .send({"email":"test@test.com"})
+            .get('/findUser/test@test.com')
             .expect(200, done);
     });
     it('busca mal un usuairo', function(done){
         this.timeout(30000);
         return request(app)
-            .post('/findUser')
-            .send({"email":"RubenToViejo@asilo.com"})
+            .get('/findUser/RubenToViejo@asilo.com')
             .expect(400, done);
     });
     it('llamada para logear sin parámetros', function(done) {
       this.timeout(30000);
       return request(app)
-        .post('/loginUser')
-        .send({})
-        .expect(400, done);
+        .get('/loginUser')
+        .expect(404, done);
     });
     it('crear evento', function(done) {
       this.timeout(30000);
@@ -104,7 +101,7 @@ describe('Controller', function(){
             .delete('/deleteEvent')
             //.expect(200, done)
             .send({
-                id_event : "22", 
+                id_event : "22",
                 email : "rgcmb@hotmail"
                 })
             .expect(400, done);
