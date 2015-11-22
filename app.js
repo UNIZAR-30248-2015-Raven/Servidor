@@ -17,11 +17,12 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || config.url
 
 
 //Configuramos express
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Configuramos las rutas
-require('./controller/controller')(app);
+require('./controller/eventsController')(app);
+require('./controller/usersController')(app);
 
 //Iniciamos el servidor
 app.listen(server_port, server_ip_address, function(){
