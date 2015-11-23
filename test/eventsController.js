@@ -13,7 +13,7 @@ describe('eventsController', function(){
         .send({
             id_event : "",
             texto : "Es mi cumpleaños",
-            day: "12 05 2015",
+            day: "2015 05 12",
             hour: "00:00",
             periodicidad : "0",
             email : "rgcmb@hotmail.com"})
