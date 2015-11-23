@@ -5,4 +5,4 @@ from pymongo import MongoClient
 client = MongoClient("mongodb://raven:raven@ds041144.mongolab.com:41144/raven")
 db = client.raven
 db.users.delete_many({});
-printf "Delete Users"
+print "Delete Users"

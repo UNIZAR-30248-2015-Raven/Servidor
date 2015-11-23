@@ -5,4 +5,4 @@ from pymongo import MongoClient
 client = MongoClient("mongodb://raven:raven@ds041144.mongolab.com:41144/raven")
 db = client.raven
 db.events.delete_many({});
-printf "Delete Events"
+print "Delete Events"
