@@ -57,5 +57,23 @@ module.exports = {
         users.findOne({"email":email_}, function(err, user){
             callback(err, user);
         });
+    },
+    //Modifica el usuario
+    modifyUser: function(usuario, email, callback){
+        users.findOne({"email": email}, function(err, res){
+            res.email = usuario.email;
+            res.tlf = usuario.tlf;
+            res.pass = usuario.pass;
+            res.nombre = usuario.nombre;
+            res.apellido = usuario.apellido;
+            res.info = usuario.info;
+            res.residencia = usuario.residencia;
+            res.nacimiento = usuario.nacimiento;
+            res.contactoNombre = usuario.contactoNombre;
+            res.contactoApellido = usuario.contactoApellido;
+            res.contactoTelefono = usuario.contactoTelefono;
+            res.save();
+            callback(err, res);
+        })
     }
 };

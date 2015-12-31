@@ -66,5 +66,25 @@ describe('Controller', function(){
       return request(app)
         .get('/loginUser')
         .expect(404, done);
+    }),
+    it('modifica un usuario', function(done){
+        this.timeout(30000);
+        var user = {
+            tlf: "9999999999",
+            email: "dummy@test.com",
+            pass: "asjdflakjfla",
+            nombre: "Dummy",
+            apellido: "Dummy",
+            info: "Dummy",
+            residencia: "Dummy",
+            nacimiento: "1994",
+            contactoNombre: "Dummy",
+            contactoApellido: "Dummy",
+            contactoTelefono: "111111111"
+        };
+        return request(app)
+            .post('/modifyUser/test@test.com')
+            .send(user)
+            .expect(200, done);
     })
 });

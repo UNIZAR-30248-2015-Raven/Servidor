@@ -39,7 +39,7 @@ module.exports = function(app){
             } else res.sendStatus(400);
           });
       }
-  }),
+    }),
     app.get('/findUser/:email', function(req, res){
         var json = req.body;
         users.find(req.params.email, function(err, user){
@@ -48,5 +48,12 @@ module.exports = function(app){
                 else res.send(user);
             }else res.sendStatus(400);
         });
-    })
+    }),
+    app.post('/modifyUser/:email', function(req, res){
+        users.modifyUser(req.body, req.params.email, function(err, res_){
+            if(err === null && res_ !== null) res.send(res_);
+            else res.sendStatus(400);
+        });
+    });
+
 }

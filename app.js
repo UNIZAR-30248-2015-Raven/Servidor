@@ -14,8 +14,6 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || config.url
 //var server_port = conf.port
 //var server_ip_address = conf.url
 
-
-
 //Configuramos express
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
