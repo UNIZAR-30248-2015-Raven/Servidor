@@ -78,5 +78,11 @@ module.exports = function(app){
                 }
             }
         })
+    }),
+    app.post('/modifyEvent/:id', function(req, res){
+        events.modifyEvent(req.params.id, req.body, function(err, op){
+            if(err === null && op !== null) res.send(op);
+            else res.sendStatus(400);
+        })
     })
 }

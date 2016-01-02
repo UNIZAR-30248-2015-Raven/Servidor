@@ -45,5 +45,17 @@ module.exports = {
 		events.find({id_event: id_}, function(err, op){
 			callback(err, op);
 		})
+	},
+	//modifica un event
+	modifyEvent: function(id_, event_, callback){
+		events.findOne({id_event: id_}, function(err, op){
+			op.texto = event_.texto;
+			op.day = event_.day;
+			op.hour = event_.hour;
+			op.periodicidad = event_.periodicidad;
+			op.email = event_.email;
+			op.save();
+			callback(err, op);
+		})
 	}
 }

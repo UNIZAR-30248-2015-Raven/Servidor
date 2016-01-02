@@ -46,16 +46,28 @@ describe('eventsController', function(){
             .get('/getEvent/' + event[0].id_event)
             .expect(200, done);
     }),
-    // Tiene que fallar por que no exite un evento con el id y usuario especificados
-    it('Borrar evento fallido', function(done){
+    it('Modifica un evento', function(done){
         this.timeout(30000);
-        request(app)
-            .delete('/deleteEvent')
-            //.expect(200, done)
-            .send({
-                id_event : "22",
-                email : "rgcmb@hotmail"
-                })
-            .expect(400, done);
+        return request(app)
+          .post('/modifyEvent/' + event[0].id_event)
+          .send({
+              id_event : "",
+              texto : "qwertyuio",
+              day: "jjjj",
+              hour: "11:11",
+              periodicidad : "0"})
+          .expect(200, done);
     })
+    // Tiene que fallar por que no exite un evento con el id y usuario especificados
+    // it('Borrar evento fallido', function(done){
+    //     this.timeout(30000);
+    //     request(app)
+    //         .delete('/deleteEvent')
+    //         //.expect(200, done)
+    //         .send({
+    //             id_event : "22",
+    //             email : "rgcmb@hotmail"
+    //             })
+    //         .expect(400, done);
+    // })
 });
