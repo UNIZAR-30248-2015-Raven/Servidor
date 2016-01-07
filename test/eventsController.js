@@ -57,6 +57,13 @@ describe('eventsController', function(){
               hour: "11:11",
               periodicidad : "0"})
           .expect(200, done);
+    }),
+    it('Borra un evento', function(done){
+        this.timeout(30000);
+        request(app)
+            .delete('/deleteEvent')
+            .send({id_event: event[0].id_event})
+            .expect(200, done);
     })
     // Tiene que fallar por que no exite un evento con el id y usuario especificados
     // it('Borrar evento fallido', function(done){

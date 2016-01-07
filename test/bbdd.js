@@ -50,18 +50,5 @@ describe('Base de datos', function(){
         // Lista los eventos y borra el de la primera posición
         // Ya que se borra por el id_event y es autogenerado
         // No lo sabemos de antemano
-        it('Borra un evento por id', function(done){
-            this.timeout(30000);
-            var id_event = "";
-            events.fetchEvents("rgcmb@hotmail.com", function(err, evento){
-                id_event = evento[0].id_event;
-                //console.log(id_event);
-                return events.deleteEvent(id_event, "rgcmb@hotmail.com", function(err, op){
-                    expect(err).to.equal(null)
-                    done();
-                });
-            });
-            
-        });
     });
 });
