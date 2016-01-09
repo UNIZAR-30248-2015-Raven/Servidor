@@ -61,7 +61,7 @@ describe('eventsController', function(){
     it('Borra un evento', function(done){
         this.timeout(30000);
         request(app)
-            .delete('/deleteEvent')
+            .post('/deleteEvent')
             .send({id_event: event[0].id_event})
             .expect(200, done);
     })

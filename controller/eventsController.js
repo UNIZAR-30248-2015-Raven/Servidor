@@ -64,7 +64,7 @@ module.exports = function(app){
           })
         }
     }),
-    app.delete('/deleteEvent', function(req, res) {
+    app.post('/deleteEvent', function(req, res) {
         var json = req.body;
         //console.log(json.id_event);
         events.deleteEvent(json.id_event, json.email, function(err, op){
