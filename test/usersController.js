@@ -90,7 +90,7 @@ describe('Controller', function(){
     it('borrar un usuario', function(done){
         this.timeout(30000);
         var user = {
-            tlf: "000010000",
+            email: "a@a.com",
             pass: "asjdflakjfla",
         };
         return request(app)

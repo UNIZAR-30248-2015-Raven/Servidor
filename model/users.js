@@ -43,9 +43,9 @@ module.exports = {
             callback(err);
         });
     },
-    deleteUser: function(tlf_, pass, callback){
-        users.remove({"tlf": tlf_, pass: pass}, function(err){
-            users.findOne({"tlf": tlf_}, function (err_, res_){
+    deleteUser: function(email, pass, callback){
+        users.remove({"email": email, pass: pass}, function(err){
+            users.findOne({"email": email}, function (err_, res_){
                 if (err_ !== null || res_ !== null) callback(1);
                 else callback(err);
             });

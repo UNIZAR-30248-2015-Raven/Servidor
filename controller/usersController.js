@@ -56,9 +56,9 @@ module.exports = function(app){
             else res.sendStatus(400);
         });
     });
-    app.post('/deleteUser/', function(req, res){
+    app.post('/deleteUser', function(req, res){
         if (req.body.tlf === null || req.body.pass === null) res.sendStatus(400);
-        users.deleteUser(req.body.tlf, req.body.pass, function(err){
+        users.deleteUser(req.body.email, req.body.pass, function(err){
             if(err === null) res.sendStatus(200);
             else res.sendStatus(400);
         });
