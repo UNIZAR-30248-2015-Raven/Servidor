@@ -43,6 +43,14 @@ module.exports = {
             callback(err);
         });
     },
+    deleteUser: function(tlf_, pass, callback){
+        users.remove({"tlf": tlf_, pass: pass}, function(err){
+            users.findOne({"tlf": tlf_}, function (err_, res_){
+                if (err_ !== null || res_ !== null) callback(1);
+                else callback(err);
+            });
+        }) ;
+    },
     //Comprobar que hacemos el login correctamente sobre un usuario que exista
     //previamente
     login: function(datosLogin_, callback) {
@@ -61,6 +69,7 @@ module.exports = {
     //Modifica el usuario
     modifyUser: function(usuario, email, callback){
         users.findOne({"email": email}, function(err, res){
+            if (res === null) return callback(err, res);
             res.email = usuario.email;
             res.tlf = usuario.tlf;
             res.pass = usuario.pass;

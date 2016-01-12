@@ -17,8 +17,8 @@ describe('Controller', function(){
         //Aumento del timeout por internet
         this.timeout(30000);
         var user = {
-            tlf: "000000000",
-            email: "test@test.com",
+            tlf: "000010000",
+            email: "a@a.com",
             pass: "asjdflakjfla",
             nombre: "Doctor",
             apellido: "Who",
@@ -38,21 +38,21 @@ describe('Controller', function(){
     it('llamada para logear al usuario', function(done) {
       this.timeout(30000);
       return request(app)
-      .post('/loginUser')
-      .send({"email":"test@test.com" ,"pass":"asjdflakjfla"})
-      .expect(200, done);
+          .post('/loginUser')
+          .send({"email":"a@a.com" ,"pass":"asjdflakjfla"})
+          .expect(200, done);
     }),
     it('llamada para logear al usuario con contraseña mal', function(done) {
       this.timeout(30000);
       return request(app)
         .post('/loginUser')
-        .send({"email":"test@test.com" ,"pass":"RubenTosesy"})
+        .send({"email":"a@a.com" ,"pass":"RubenTosesy"})
         .expect(400, done);
     }),
     it('busca a un usuario bien', function(done){
         this.timeout(30000);
         return request(app)
-            .get('/findUser/test@test.com')
+            .get('/findUser/a@a.com')
             .expect(200, done);
     }),
     it('busca mal un usuario', function(done){
@@ -70,8 +70,8 @@ describe('Controller', function(){
     it('modifica un usuario', function(done){
         this.timeout(30000);
         var user = {
-            tlf: "9999999999",
-            email: "dummy@test.com",
+            tlf: "000010000",
+            email: "a@a.com",
             pass: "asjdflakjfla",
             nombre: "Dummy",
             apellido: "Dummy",
@@ -83,7 +83,18 @@ describe('Controller', function(){
             contactoTelefono: "111111111"
         };
         return request(app)
-            .post('/modifyUser/test@test.com')
+            .post('/modifyUser/a@a.com')
+            .send(user)
+            .expect(200, done);
+    }),
+    it('borrar un usuario', function(done){
+        this.timeout(30000);
+        var user = {
+            tlf: "000010000",
+            pass: "asjdflakjfla",
+        };
+        return request(app)
+            .post('/deleteUser')
             .send(user)
             .expect(200, done);
     })

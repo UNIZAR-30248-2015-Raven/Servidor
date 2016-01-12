@@ -50,8 +50,16 @@ module.exports = function(app){
         });
     }),
     app.post('/modifyUser/:email', function(req, res){
+        if (req.body === null || req.params.email === null) re.sendStatus(400);
         users.modifyUser(req.body, req.params.email, function(err, res_){
             if(err === null && res_ !== null) res.send(res_);
+            else res.sendStatus(400);
+        });
+    });
+    app.post('/deleteUser/', function(req, res){
+        if (req.body.tlf === null || req.body.pass === null) res.sendStatus(400);
+        users.deleteUser(req.body.tlf, req.body.pass, function(err){
+            if(err === null) res.sendStatus(200);
             else res.sendStatus(400);
         });
     });
